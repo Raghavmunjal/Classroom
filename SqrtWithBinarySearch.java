@@ -58,6 +58,7 @@ public class SqrtWithBinarySearch {
 
         /* Printing the result */
         System.out.println((float)result);
+      //System.out.printf("%."+p+"f",result);
 
         ref.close();
     }
