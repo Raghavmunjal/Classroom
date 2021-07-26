@@ -39,8 +39,8 @@ void Input_generator(int arr[],int n,int type){
     }
     else if(type == 3) {
         
-        for(int i=n-1;i>=0;i--){
-            arr[i] = i;
+        for(int i=0;i<n;i++){
+            arr[i] = n-i-i;
         }
         
     }
