@@ -68,25 +68,25 @@ void swap(int arr[],int i,int j){
 
 void bubble_sort(int arr[],int n){
     
-    //bool swapped = false;
+    bool swapped = false;
     
     for(int i=0;i<n-1;i++){
         
-        //swapped = false;
+        swapped = false;
         
-        for(int j=0;j<=n-i-1;j++){
+        for(int j=0;j<n-i-1;j++){
             
             // checking adjacent elements
             if(arr[j] > arr[j+1]){
                 swap(arr,j,j+1);
-                //swapped = true;
+                swapped = true;
             }
             
         }
         
         // if swapped remains false it means array is already sorted
-        //if(swapped == false)
-        //break;
+        if(swapped == false)
+            break;
     }
     
 }
