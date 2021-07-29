@@ -1,10 +1,26 @@
+    /*
+ * Program which evaluates a reverse Polish expression
+ *
+ * Compilation : gcc -o  postfix_evaluation.c
+ * Execution : ./postfix_evaluation
+ *
+ * Raghav Munjal 1910990074 29/07/21
+ * Assignment_1 -> C Foundation
+*/
+
 #include <stdio.h>
 #include <string.h>   
 
-int MAXSIZE = 25;       
-int stack[25];     
+// Intailizing maximum size of stack
+int MAXSIZE = 25;
+
+// Intializing stack 
+double stack[25];
+
+// Intializing top_index = -1
 int top = -1; 
 
+// Function to check if stack is empty
 int isempty() {
 
    if(top == -1)
@@ -12,16 +28,18 @@ int isempty() {
    else
       return 0;
 }
-   
+
+// Function to check if stack is full
 int isfull() {
 
-   if(top == MAXSIZE)
+   if(top == MAXSIZE-1)
       return 1;
    else
       return 0;
 }
 
-int peek() {
+// Function to check peek of stack
+double peek() {
     
    if(!isempty()) {
       return stack[top];
@@ -31,8 +49,9 @@ int peek() {
    
 }
 
-int pop() {
-   int data;
+// Function to remove element from top of the stack
+double pop() {
+   double data;
 	
    if(!isempty()) {
       data = stack[top];
@@ -43,7 +62,8 @@ int pop() {
    }
 }
 
-int push(int data) {
+// Function to insert data in stack
+void push(double data) {
 
    if(!isfull()) {
       top = top + 1;   
@@ -75,7 +95,7 @@ void expr(int n){
 
     for(int i = 0; i < n; i++){
         
-        scanf(" %c ", &ch);
+        scanf(" %c", &ch);
 
         if(isdigit(ch)){
           push(ch-48);
